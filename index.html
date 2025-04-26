@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow Store - متجر إلكتروني</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: #fff;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>مرحبا بك في متجر Shadow</h1>
+  <p>تصفح منتجاتنا الوهمية!</p>
+</header>
+
+<main id="products">
+  <!-- سيتم إضافة الكروت هنا -->
+</main>
+
+<script src="button.js"></script>
+<script src="card.js"></script>
+<script src="dialog.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const productsContainer = document.getElementById('products');
+
+  for (let i = 1; i <= 3; i++) {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.innerHTML = `
+      <h2>منتج ${i}</h2>
+      <p>وصف مختصر للمنتج رقم ${i}.</p>
+      <button onclick="alert('تم إضافة المنتج ${i} إلى السلة')">أضف للسلة</button>
+    `;
+    productsContainer.appendChild(card);
+  }
+});
+</script>
+
+</body>
+</html>
